@@ -4,7 +4,10 @@ import matplotlib.pyplot as plt
 numbers = np.array([1, 2, 3, 4, 5, 6])
 probabilities = np.full(6, 1/6)
 
-Expected_value = np.sum(numbers * probabilities)
+Expected_value = 0
+for i in range(len(numbers)): 
+    Expected_value += numbers[i] * probabilities[i]
+#Expected_value = np.sum(numbers * probabilities)
 print(f'Expected value is ', Expected_value)
 
 np.random.seed(42)  # for reproducibility
